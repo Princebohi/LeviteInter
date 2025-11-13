@@ -12,76 +12,94 @@ export default function Agenda(){
 
     return(
 
-        <div className="flex flex-col lg:flex-row lg:w-auto  gap-8 py-10 justify-center items-start lg:px-50">
-            <div className="flex flex-col gap-5 items-center justify-center w-110 mx-auto">
-                <section className="flex flex-col w-full items-start pl-5 pr-20 py-5 gap-4 bg-blue-50 rounded-md h-auto border border-2 border-gray-300">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 py-6 lg:py-10 justify-center items-start px-10 sm:px-6 lg:px-10 xl:px-20">
+            {/* Sidebar gauche - Calendrier et Actions */}
+            <div className="flex flex-col gap-5 items-center justify-center w-full lg:w-96 mx-auto lg:mx-0">
+                {/* Section Calendrier */}
+                <section className="flex flex-col w-full items-start px-4 sm:px-5 py-5 gap-4 bg-blue-50 rounded-md border-2 border-gray-300">
                     <div className="flex gap-2 justify-center items-center">
                         <CalendarIcon className="text-blue-600 w-5 h-5" strokeWidth={2.5}/>
-                        <h4 className="text-blue-900 font-bold">Calendrier</h4>
+                        <h4 className="text-blue-900 font-bold text-sm sm:text-base">Calendrier</h4>
                     </div>
-                    {/*Marquer une date avec la couleur de l'evenement */}
-                    <Calendar
-                        mode="single" selected={date} onSelect={setDate} required={true}
-                        className="rounded-md text-blue-900 font-semibold bg-transparent border border-2 border-gray-200"
-                    />
+                    
+                    <div className="w-full flex justify-center">
+                        <Calendar
+                            mode="single" 
+                            selected={date} 
+                            onSelect={setDate} 
+                            required={true}
+                            className="rounded-md text-blue-900 font-semibold bg-transparent border-2 border-gray-200"
+                        />
+                    </div>
 
-                    <div className="flex flex-col gap-4">
-                        <h4 className="text-blue-900 font-bold">Légende</h4>
-                        <div className="flex flex-col items-start gap-1">
-                            <div className="flex justify-center items-center gap-2">
-                                <CircleIcon className="text-yellow-500 w-3 h-3" fill="currentcolor"/>
-                                <p className="text-gray-600">Concerts</p>
+                    <div className="flex flex-col gap-4 w-full">
+                        <h4 className="text-blue-900 font-bold text-sm sm:text-base">Légende</h4>
+                        <div className="flex flex-col items-start gap-1.5 sm:gap-2">
+                            <div className="flex justify-start items-center gap-2">
+                                <CircleIcon className="text-yellow-500 w-3 h-3 flex-shrink-0" fill="currentcolor"/>
+                                <p className="text-gray-600 text-xs sm:text-sm">Concerts</p>
                             </div>
 
-                            <div className="flex justify-center items-center gap-2">
-                                <CircleIcon className="text-blue-600 w-3 h-3" fill="currentcolor"/>
-                                <p className="text-gray-600">Caravanes</p>
+                            <div className="flex justify-start items-center gap-2">
+                                <CircleIcon className="text-blue-600 w-3 h-3 flex-shrink-0" fill="currentcolor"/>
+                                <p className="text-gray-600 text-xs sm:text-sm">Caravanes</p>
                             </div>
 
-                            <div className="flex justify-center items-center gap-2">
-                                <CircleIcon className="text-green-600 w-3 h-3" fill="currentcolor"/>
-                                <p className="text-gray-600">Journées mondiales</p>
+                            <div className="flex justify-start items-center gap-2">
+                                <CircleIcon className="text-green-600 w-3 h-3 flex-shrink-0" fill="currentcolor"/>
+                                <p className="text-gray-600 text-xs sm:text-sm">Journées mondiales</p>
                             </div>
 
-                            <div className="flex justify-center items-center gap-2">
-                                <CircleIcon className="text-red-700 w-3 h-3" fill="currentcolor"/>
-                                <p className="text-gray-600">Formations</p>
+                            <div className="flex justify-start items-center gap-2">
+                                <CircleIcon className="text-red-700 w-3 h-3 flex-shrink-0" fill="currentcolor"/>
+                                <p className="text-gray-600 text-xs sm:text-sm">Formations</p>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section className="flex flex-col px-5 py-5 gap-4 bg-blue-50 rounded-md  w-full h-auto border border-2 border-gray-300">
-                    <h4 className="text-blue-900 font-bold">Actions Rapides</h4>
+
+                {/* Section Actions Rapides */}
+                <section className="flex flex-col px-4 sm:px-5 py-5 gap-4 bg-blue-50 rounded-md w-full border-2 border-gray-300">
+                    <h4 className="text-blue-900 font-bold text-sm sm:text-base">Actions Rapides</h4>
                     <div className="flex flex-col gap-3">
-                        <Button className="bg-blue-700 rounded-sm hover:bg-blue-300">
-                            <ExternalLinkIcon className="text-white" strokeWidth={2.5}/>
+                        <Button className="bg-blue-700 rounded-sm hover:bg-blue-600 transition duration-150 w-full text-xs sm:text-sm">
+                            <ExternalLinkIcon className="text-white w-4 h-4" strokeWidth={2.5}/>
                             <p className="text-white">Ajouter à Google Calendar</p>
                         </Button>
 
-                        <Button className="bg-transparent rounded-sm border border-1 border-gray-300 hover:bg-blue-300">
-                            <UserPlusIcon className="text-blue-800" strokeWidth={2.5}/>
+                        <Button className="bg-transparent rounded-sm border border-gray-300 hover:bg-blue-100 transition duration-150 w-full text-xs sm:text-sm">
+                            <UserPlusIcon className="text-blue-800 w-4 h-4" strokeWidth={2.5}/>
                             <p className="text-blue-900">S&apos;inscrire à la newsletter</p>
                         </Button>
 
-                        <Button className="bg-transparent rounded-sm border border-1 border-gray-300 hover:bg-blue-300">
-                            <DownloadIcon className="text-blue-800" strokeWidth={2.5}/>
+                        <Button className="bg-transparent rounded-sm border border-gray-300 hover:bg-blue-100 transition duration-150 w-full text-xs sm:text-sm">
+                            <DownloadIcon className="text-blue-800 w-4 h-4" strokeWidth={2.5}/>
                             <p className="text-blue-900">Télécharger le programme</p>
                         </Button>
                     </div>
                 </section>
             </div>
 
-            <div className="flex flex-col gap-8 justify-start items-start w-full">
+            {/* Section droite - Liste des événements */}
+            <div className="flex flex-col gap-6 lg:gap-8 justify-start items-start w-full lg:flex-1">
+                {/* Toggle entre événements à venir et passés */}
                 <div className="flex bg-blue-50 w-full rounded-lg p-1">
-                    <Button className={`bg-blue-50 w-1/2 hover:bg-white ${Bouttoncolor === "FuturEvents" ? "bg-white" : ""}`} onClick={() => {setBouttoncolor("FuturEvents")}} >
-                        <p className="text-blue-800">Événements à venir</p>
+                    <Button 
+                        className={`bg-blue-50 w-1/2 hover:bg-white transition duration-150 text-xs sm:text-sm ${Bouttoncolor === "FuturEvents" ? "bg-white shadow-sm" : ""}`} 
+                        onClick={() => {setBouttoncolor("FuturEvents")}}
+                    >
+                        <p className="text-blue-800 font-medium">Événements à venir</p>
                     </Button>
-                    <Button className={`bg-blue-50 w-1/2 hover:bg-white ${Bouttoncolor === "PastEvents" ? "bg-white" : ""}`} onClick={() => {setBouttoncolor("PastEvents")}}>
-                        <p className="text-blue-800">Événements passés</p>
+                    <Button 
+                        className={`bg-blue-50 w-1/2 hover:bg-white transition duration-150 text-xs sm:text-sm ${Bouttoncolor === "PastEvents" ? "bg-white shadow-sm" : ""}`} 
+                        onClick={() => {setBouttoncolor("PastEvents")}}
+                    >
+                        <p className="text-blue-800 font-medium">Événements passés</p>
                     </Button>
                 </div>
 
-                <div className="flex flex-col gap-4 w-full">
+                {/* Liste des événements */}
+                <div className="flex flex-col gap-4 sm:gap-5 w-full">
 
                     <EventCard
                         Linecolor={"bg-yellow-500"}

@@ -18,7 +18,7 @@ interface ThreeActions{
 }
 export default function ActionC({icon, circlecolor, title, text, firsticon, secondicon, thirdicon, firsticontext, secondicontext, thirdicontext, butontext, butontextcolor, butoncolor, bordercolor}:ThreeActions){
     return(
-        <div className={`flex  flex-col py-5 px-5 bg-gray-100 border gap-5 border-2 rounded-lg  ${bordercolor}`}>
+        <div className={`flex  flex-col py-5 px-5 bg-gray-100 gap-5 border-2 rounded-lg  ${bordercolor}`}>
             <div className={`flex items-center justify-center h-10 w-10  rounded-full ${circlecolor} `}>
                 {icon}
             </div>
@@ -38,7 +38,7 @@ export default function ActionC({icon, circlecolor, title, text, firsticon, seco
                     <p className="text-md text-gray-600">{thirdicontext}</p>
                 </div>
             </div>
-            <Button className={`hover:bg-blue-900 rounded-md  ${butoncolor} ${butontextcolor}`}>{butontext}</Button>         
+            <Button className={`hover:bg-blue-900 px-10 rounded-md  ${butoncolor} ${butontextcolor}`}>{butontext}</Button>         
         </div>
     )
 }

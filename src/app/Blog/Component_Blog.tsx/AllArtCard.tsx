@@ -4,7 +4,7 @@ import { ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { UserIcon, CalendarIcon, Clock3Icon, EyeIcon, Share2Icon } from "lucide-react";
 
-interface All{
+interface All {
     tbicon: React.ReactNode
     imagesrc: string
     title: string
@@ -16,70 +16,69 @@ interface All{
     view: string
 }
 
-export default function AllCard({tbicon, imagesrc, title, description, bluetext, user, date, time, view} : All){
-    return(
-        <div className="relative shadow-lg bg-blue-50 cursor-pointer pt-5 border border-2 rounded-md">
+export default function AllCard({ tbicon, imagesrc, title, description, bluetext, user, date, time, view }: All) {
+    return (
+        <div className="relative shadow-lg bg-blue-50 cursor-pointer pt-5 border-2 rounded-md w-full sm:w-96 md:w-full lg:w-80">
             
-            <div className="flex gap-1 py-1 absolute top-10 left-2 bg-blue-500 text-white text-xs justify-center items-center font-semibold px-3  rounded-sm z-10">
+            {/* Badge bleu */}
+            <div className="flex gap-1 py-1 absolute top-2 sm:top-3 left-2 bg-blue-500 text-white text-xs sm:text-sm justify-center items-center font-semibold px-2 sm:px-3 rounded-sm z-10">
                 {tbicon}
                 {bluetext}
             </div>
 
-            <div className="relative h-80 w-full flex justify-center items-center">
-                    {/* Affiche l'image si elle est fournie, sinon un fond gris */}
+            {/* Image */}
+            <div className="relative h-48 sm:h-64 md:h-72 lg:h-80 w-full flex justify-center items-center">
                 {imagesrc ? (
                     <Image
                         src={imagesrc}
                         alt={`Vignette de la vidéo ${title}`}
                         fill
-                        className="object-cover"
+                        className="object-cover rounded-t-md"
                     />
                 ) : (
-                    // <div className="bg-gray-200 w-full h-full" />
-                    
-                <div className="bg-gray-200 w-full h-full mt-2  flex items-center justify-center">
-                    <div className="flex absolute border border-1 border-gray-100 bg-white w-8 h-8 items-center justify-center rounded-full">
-                        <ImageIcon className="text-gray-500 h-5 w-5" strokeWidth={1} />
+                    <div className="bg-gray-200 w-full h-full flex items-center justify-center rounded-t-md">
+                        <div className="absolute border border-gray-100 bg-white w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full">
+                            <ImageIcon className="text-gray-500 h-5 w-5 sm:h-6 sm:w-6" strokeWidth={1} />
+                        </div>
                     </div>
-                </div>
                 )}
-
             </div>
-            <div className="flex flex-col gap-3 items-start py-10 px-5">
-                <h3 className="text-md font-bold text-blue-900">{title}</h3>
-                <p className="text-xs text-gray-600">{description}</p>
-                <div className="flex flex-col gap-5 text-xs w-full justify-between text-gray-500">
-                    <div className="flex gap-3 justify-between">
-                        <div className="flex gap-1 justify-center items-center">
-                            <UserIcon className="w-3 h-3"/>
+
+            {/* Contenu texte */}
+            <div className="flex flex-col gap-3 items-start py-4 px-3 sm:py-6 sm:px-5">
+                <h3 className="text-sm sm:text-md md:text-lg font-bold text-blue-900">{title}</h3>
+                <p className="text-xs sm:text-sm md:text-base text-gray-600">{description}</p>
+
+                {/* Infos utilisateurs/date */}
+                <div className="flex flex-col gap-3 text-xs sm:text-sm w-full justify-between text-gray-500">
+                    <div className="flex gap-3 justify-between w-full">
+                        <div className="flex gap-1 items-center">
+                            <UserIcon className="w-3 h-3 sm:w-4 sm:h-4"/>
                             <p>{user}</p>
                         </div>
-                        <div className="flex gap-1 justify-center items-center">
-                            <CalendarIcon className="w-3 h-3"/>
+                        <div className="flex gap-1 items-center">
+                            <CalendarIcon className="w-3 h-3 sm:w-4 sm:h-4"/>
                             <p>{date}</p>
                         </div>
                     </div>
 
-                    <div className="flex justify-between pr-2">
-                        <div className="flex gap-3 ">
-                            <div className="flex gap-1 justify-center items-center">
-                                <Clock3Icon className="w-3 h-3"/>
+                    <div className="flex justify-between w-full">
+                        <div className="flex gap-3">
+                            <div className="flex gap-1 items-center">
+                                <Clock3Icon className="w-3 h-3 sm:w-4 sm:h-4"/>
                                 <p>{time}</p>
                             </div>
-                            <div className="flex gap-1 justify-center items-center">
-                                <EyeIcon className="w-3 h-3"/>
+                            <div className="flex gap-1 items-center">
+                                <EyeIcon className="w-3 h-3 sm:w-4 sm:h-4"/>
                                 <p>{view}</p>
                             </div>
                         </div>
 
-                        <Button className=" bg-transparent hover:bg-transparent">
-                            <Share2Icon
-                                className="w-4 h-4 text-blue-900"
-                            />
+                        <Button className="bg-transparent hover:bg-transparent p-1">
+                            <Share2Icon className="w-4 h-4 sm:w-5 sm:h-5 text-blue-900" />
                         </Button>
                     </div>
                 </div>
-                
             </div>
         </div>
     )

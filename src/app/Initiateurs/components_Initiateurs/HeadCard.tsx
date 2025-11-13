@@ -10,7 +10,7 @@ interface Head {
 
 export default function HeadCard({imagesrc, name, djob, description}: Head){
     return(
-        <section className={`flex flex-col items-center justify-center w-75 h-70 bg-orange-50/40 px-4 rounded-lg border border-2 shadow-md py-5 text-center`}>
+        <section className={`flex flex-col items-center justify-center w-75 h-70 bg-orange-50/40 px-4 rounded-lg  border-2 shadow-md py-5 text-center`}>
             {imagesrc ? (
                 <Image
                     src={imagesrc}

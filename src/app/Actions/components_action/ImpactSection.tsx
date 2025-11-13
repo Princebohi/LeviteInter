@@ -7,7 +7,7 @@ export default function Impact(){
                 <h2 className="text-2xl font-bold text-blue-900">Notre Impact en Chiffres</h2>
                 <p className="text-gray-600">Des résultat concrets grâce à vos dons et notre engagement</p>
             </div>
-            <div className="flex text-center gap-20 items-center justify-center">
+            <div className="flex md:flex-row md:gap-20 flex-col gap-10 text-center items-center justify-center">
                 <ImpCard
                     Stat={"1.5M"}
                     StatColor={"text-blue-700"}

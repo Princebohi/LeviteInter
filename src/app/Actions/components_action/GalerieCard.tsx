@@ -20,7 +20,7 @@ export default function GVideo({imagesrc, videosrc, title, description, bluetext
     }
        
     return(
-        <div className="relative shadow-lg text-center w-80 bg-blue-50 cursor-pointer pt-5 border border-2 rounded-md">
+        <div className="relative shadow-lg text-center w-80 bg-blue-50 cursor-pointer pt-5  border-2 rounded-md">
             {/* Si c'est une vidéo et qu'elle ne joue pas... */}
             <span className="absolute top-7 left-2 bg-blue-500 text-white text-xs py-1 font-semibold px-3  rounded-sm z-10">
                 {bluetext}

@@ -13,7 +13,7 @@ interface StatCardProps {
 
 export default function StatCard({bordercolor, bgColor, icon, textcolor, chiffre, description, stat, statcolor, textstat}: StatCardProps){
     return(
-        <section className={` bg-gray-100 px-10 rounded-lg border border-1 ${bordercolor} shadow-md py-11 text-center`}>
+        <section className={` bg-gray-100 px-10 rounded-lg border ${bordercolor} shadow-md py-11 text-center`}>
             <div className={`flex items-center justify-center h-16 w-16 mx-auto rounded-full ${bgColor} mb-4`}>
                 {icon}
             </div>

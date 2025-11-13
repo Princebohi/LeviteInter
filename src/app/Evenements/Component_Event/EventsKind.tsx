@@ -3,7 +3,7 @@ import { StethoscopeIcon, GlobeIcon, TruckIcon, MusicIcon } from "lucide-react"
 
 export default function KindEvents(){
     return(
-        <div className="px-20 py-5">
+        <div className="px-10 py-5">
             <div className="flex flex-col text-center gap-3 pb-1 pt-10">
                 <h2 className="text-4xl font-bold text-blue-900">Types d&apos;Événements</h2>
                 <p className="text-gray-600 ">Découvrez nos différentes activités et leur impact</p>

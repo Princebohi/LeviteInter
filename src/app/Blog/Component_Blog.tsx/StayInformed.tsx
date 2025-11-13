@@ -4,14 +4,14 @@ import { ArrowRightIcon } from "lucide-react";
 
 export default function StayInformed(){
     return(
-        <div className="flex pb-10 items-center justify-center">
-            <section className="flex flex-col p-15 max-w-3xl gap-4 border border-1 text-center border-blue-300 rounded-lg items-center justify-center bg-gradient-to-r from-blue-200/90 to-green-100/90">
+        <div className="flex px-10  pb-10 items-center justify-center">
+            <section className="flex flex-col gap-4 items-center justify-center max-w-3xl p-6 sm:p-10 border border-blue-300 rounded-lg text-center bg-gradient-to-r from-blue-200/90 to-green-100/90">
                 <div className="flex bg-blue-200 w-9 h-9 items-center justify-center rounded-full">
                     <BookOpenIcon className="text-blue-700"/>
                 </div>
                 <h2 className="font-bold text-blue-900 text-xl">Restez Informé de Nos Actualités</h2>
                 <p>Recevez nos derniers articles, témoignages et actualités médicales directement dans votre boîte mail. Pas de spam, que du contenu utile pour votre santé.</p>
-                <div className="flex gap-3">
+                <div className="flex flex-col md:flex-row gap-3">
                     <input 
                         type="text"
                         placeholder="Votre adresse email"

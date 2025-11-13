@@ -16,6 +16,9 @@ export default function Stats(){
                     bordercolor={"border-blue-100"}
                     description={"Personnes infectées par l'hépatite B"}
                     bgColor={"bg-blue-50"}
+                    stat={""}
+                    statcolor={""}
+                    textstat={""}
                 />
             
                 <StatCard
@@ -25,6 +28,9 @@ export default function Stats(){
                     bordercolor={"border-green-100"}
                     description={"Personnes infectées par l'hépatite C"}
                     bgColor={"bg-green-50"}
+                    stat={""}
+                    statcolor={""}
+                    textstat={""}
                 />
 
                 <StatCard
@@ -34,6 +40,9 @@ export default function Stats(){
                     bordercolor={"border-red-100"}
                     description={"Ne connaissent pas leur statut"}
                     bgColor={"bg-red-50"}
+                    stat={""}
+                    statcolor={""}
+                    textstat={""}
                 />
 
                 <StatCard
@@ -43,6 +52,9 @@ export default function Stats(){
                     bordercolor={"border-yellow-100"}
                     description={"Guérissables si détectées tôt"}
                     bgColor={"bg-yellow-50"}
+                    stat={""}
+                    statcolor={""}
+                    textstat={""}
                 />
             </div>
         </div>
