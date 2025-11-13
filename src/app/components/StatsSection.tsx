@@ -1,3 +1,6 @@
+import { UsersIcon, HeartIcon, CalendarIcon } from "lucide-react";
+import StatCard from "../Lutte/components/StatCard";
+
 export default function Stat() {
   return (
     <section className="flex flex-col justify-between px-6 sm:px-10 md:px-20 lg:px-40 py-10 space-y-10">
@@ -19,56 +22,56 @@ export default function Stat() {
       </div>
 
       {/* --- Titre et sous-texte --- */}
-      <div className="text-center space-y-2">
-        <h2 className="text-blue-800 font-bold text-2xl sm:text-3xl">Notre Mission</h2>
-        <p className="text-gray-500 text-sm sm:text-base">
-          Trois piliers fondamentaux guident notre action pour éradiquer les hépatites en <br className="hidden sm:block" /> 
-          Côte d&apos;Ivoire.
-        </p>
-      </div>
+        <div>
+            <div className="text-center space-y-2">
+              <h2 className="text-blue-800 font-bold text-2xl sm:text-3xl">Notre Mission</h2>
+              <p className="text-gray-500 text-sm sm:text-base">
+                Trois piliers fondamentaux guident notre action pour éradiquer les hépatites en <br className="hidden sm:block" /> 
+                Côte d&apos;Ivoire.
+              </p>
+            </div>
 
-      {/* --- Sections de mission --- */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* --- Sections de mission --- */}
         
-        {/* Sensibilisation */}
-        <section className="flex flex-col items-center border border-blue-100 rounded-md bg-blue-50 gap-2 py-10 px-5 text-center shadow-sm hover:shadow-md transition">
-          <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="blue" className="size-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38...Z" />
-            </svg>
-          </div>
-          <h3 className="text-blue-900 font-bold text-xl sm:text-2xl">Sensibilisation</h3>
-          <p className="text-gray-600 text-sm sm:text-base">
-            Éduquer les populations sur les risques des hépatites et l&apos;importance du dépistage précoce.
-          </p>
-        </section>
+            {/* Sensibilisation */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-10 py-8 ">
+                <StatCard
+                    icon={<UsersIcon className="text-blue-700"/>}
+                    chiffre={"Sensibilisation"}
+                    textcolor={"text-blue-900"}
+                    bordercolor={"border-blue-100"}
+                    description={"Eduquer les population sur les risques des hépatites et l'importance du dépistage précoce."}
+                    bgColor={"bg-blue-100"}
+                    stat={""}
+                    statcolor={""}
+                    textstat={""}
+                />
+            
+                <StatCard
+                    icon={<HeartIcon className="text-green-700"/>}
+                    chiffre={"Dépistage Gratuit"}
+                    textcolor={"text-blue-900"}
+                    bordercolor={"border-green-100"}
+                    description={"Organiser des campagnes de dépistage gratuit dans toute la Côte d'Ivoire."}
+                    bgColor={"bg-green-600/20"}
+                    stat={""}
+                    statcolor={""}
+                    textstat={""}
+                />
 
-        {/* Dépistage gratuit */}
-        <section className="flex flex-col items-center border border-green-100 rounded-md bg-blue-50 gap-2 py-10 px-5 text-center shadow-sm hover:shadow-md transition">
-          <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="green" className="size-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485...Z" />
-            </svg>
-          </div>
-          <h3 className="text-blue-900 font-bold text-xl sm:text-2xl">Dépistage Gratuit</h3>
-          <p className="text-gray-600 text-sm sm:text-base">
-            Organiser des campagnes de dépistage gratuit dans toute la Côte d&apos;Ivoire.
-          </p>
-        </section>
-
-        {/* Concerts caritatifs */}
-        <section className="flex flex-col items-center border border-orange-100 rounded-md bg-blue-50 gap-2 py-10 px-5 text-center shadow-sm hover:shadow-md transition">
-          <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="orange" className="size-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25...Z" />
-            </svg>
-          </div>
-          <h3 className="text-blue-900 font-bold text-xl sm:text-2xl">Concerts Caritatifs</h3>
-          <p className="text-gray-600 text-sm sm:text-base">
-            Mobiliser à travers la musique gospel pour financer nos actions de santé publique.
-          </p>
-        </section>
-      </div>
+                <StatCard
+                    icon={<CalendarIcon className="text-orange-400"/>}
+                    chiffre={"Concerts Caritatifs"}
+                    textcolor={"text-blue-900"}
+                    bordercolor={"border-orange-100"}
+                    description={"Mobiliser à travers la musique gospel pour financer nos actions de santé publique."}
+                    bgColor={"bg-orange-100/70"}
+                    stat={""}
+                    statcolor={""}
+                    textstat={""}
+                />
+            </div>
+        </div>
     </section>
   );
 }
